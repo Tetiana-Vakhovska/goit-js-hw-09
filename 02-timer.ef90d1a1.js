@@ -1,0 +1,2 @@
+const t={intervalId:null,isActive:!1,start(){if(this.isActive)return;const t=Data.now();this.isActive=!0,this.intervalId=setInterval((()=>{const s=Date.now()-t,{hours:e,mins:i,secs:n}=getTimeComponents(s);console.log("${hours}:${mins}:${secs}")}),1e3)},stop(){clearInterval(this.intervalId),this.isActive=!1}};refs.startBtn.addEventListener("clic",(()=>{t.start()})),refs.stopBtn.addEventListener("clic",(()=>{t.stop()}));
+//# sourceMappingURL=02-timer.ef90d1a1.js.map
