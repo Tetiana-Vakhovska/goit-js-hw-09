@@ -1,3 +1,4 @@
+Clocface: document.querySelector('.js-clocface')
 const timer = {
     intervalId:null,
     isActive:false,
@@ -13,6 +14,7 @@ const timer = {
             const deltaTime=currentTime - startTime;
             const { hours, mins, secs}= getTimeComponents(deltaTime);
             console.log('${hours}:${mins}:${secs}');
+          
         }, 1000 );
     },
     stop(){
@@ -28,4 +30,18 @@ refs.stopBtn.addEventListener('clic', () =>{
 });
 function updateClockface({hours,mins,secs}){
     refs.Clockface.textContent='${hours}:${mins}:${secs}';
+}
+
+function pad(value){
+    return String(value).padStart(2,'0');
+}
+
+function getTimeComponents(time){
+    
+const hours= pad(
+    Math.floor((time%(1000*60*60*24))/(1000*60*60)),
+);
+const mins=pad(Math.floor((time%(1000*60*60))/(1000*60)));
+const secs= pad(Math.floor((time%(1000*60))/1000));
+return {hours,mins,secs};
 }
