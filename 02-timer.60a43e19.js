@@ -1,2 +1,0 @@
-!function(){var t={intervalId:null,isActive:!1,start:function(){if(!this.isActive){var t=Data.now();this.isActive=!0,this.intervalId=setInterval((function(){var n=Date.now(),i=getTimeComponents(n-t);i.hours,i.mins,i.secs;console.log("${hours}:${mins}:${secs}")}),1e3)}},stop:function(){clearInterval(this.intervalId),this.isActive=!1}};refs.startBtn.addEventListener("clic",(function(){t.start()})),refs.stopBtn.addEventListener("clic",(function(){t.stop()}))}();
-//# sourceMappingURL=02-timer.60a43e19.js.map
