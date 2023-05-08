@@ -1,4 +1,4 @@
-Clocface: document.querySelector('.js-clocface')
+ refs:document.querySelector('.js-clocface');
 const timer = {
     intervalId:null,
     isActive:false,
