@@ -4,3 +4,6 @@ function getRandomHexColor() {
   }
 
   hhh
+
+  ййййй
+  gggg
