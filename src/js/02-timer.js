@@ -1,5 +1,5 @@
 import flatpickr from  "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
+flatpickr/dist/flatpickr.min.css;
 import Notiflix from 'notiflix';
 
 const day =document.querySelector('data-days');
@@ -8,8 +8,11 @@ const minute = document.querySelector('data-minutes');
 const second=document.querySelector('data-seconds');
 
 
-
 function flatpickr(selector, options){
+const selector={
+  enableTime: true,
+  dateFormat: "Y-m-d H:i",
+};
   const options = {
     enableTime: true,
     time_24hr: true,
