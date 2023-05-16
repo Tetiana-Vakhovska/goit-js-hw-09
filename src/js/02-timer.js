@@ -11,9 +11,6 @@ const refs = {
   secs: document.querySelector('span[data-seconds]'),
 };
 
-let intervalId = null;
-refs.start.disabled = true;
-
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -24,7 +21,7 @@ const options = {
 
     if (selectedDates[0] < new Date()) {
       refs.start.disabled = true;
-      Notiflix.Notify.failure('Please choose a date in the future! Do not look back..');
+      Notiflix.Notify.failure('Please choose a date in the future!');
       return;
     }
     if (selectedDates[0] > new Date()) {
@@ -39,7 +36,7 @@ const options = {
           clearInterval(intervalId);
         }
         const result = convertMs(differenceInTime);
-        viewOfTimer(result);
+       OfTimer(result);
       }, 1000);
     });
   },
@@ -47,15 +44,11 @@ const options = {
 
 flatpickr('#datetime-picker', options);
 
-function viewOfTimer({ days, hours, minutes, seconds }) {
+function OfTimer({ days, hours, minutes, seconds }) {
   refs.days.textContent = `${days}`;
   refs.hours.textContent = `${hours}`;
   refs.mins.textContent = `${minutes}`;
   refs.secs.textContent = `${seconds}`;
-}
-
-function addLeadingZero(value) {
-  return String(value).padStart(2, '0');
 }
 
 
