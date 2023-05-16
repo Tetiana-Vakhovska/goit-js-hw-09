@@ -9,19 +9,7 @@ const second=document.querySelector('data-seconds');
 
 
 function flatpickr(selector, options){
-const selector={
-  enableTime: true,
-  dateFormat: "Y-m-d H:i",
-};
-  const options = {
-    enableTime: true,
-    time_24hr: true,
-    defaultDate: new Date(),
-    minuteIncrement: 1,
-    onClose(selectedDates) {
-      console.log(selectedDates[0]);
-    },
-  };
+
 
 }
 
