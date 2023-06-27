@@ -37,20 +37,15 @@ const options = {
         }
         const result = convertMs(differenceInTime);
        OfTimer(result);
- if((selectedDates-Date.now()) <=0){
-    clearInterval (intervalId);
-days.textContent='00';
-hours.textContent='00';
-minutes.textContent='00';
-seconds.textContent='00';
-  }
+
+  
 
       }, 1000);
     });
   },
- 
 
-};
+
+}
 
 flatpickr('#datetime-picker', options);
 
