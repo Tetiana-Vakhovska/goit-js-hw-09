@@ -29,7 +29,7 @@ const options = {
     }
 
     refs.start.addEventListener('click', () => {
-      intervalId (() => {
+      intervalId = setInterval(() => {
         const differenceInTime = selectedDates[0] - new Date();
 
         if (differenceInTime < 1000) {
