@@ -35,9 +35,10 @@ const options = {
         if (differenceInTime < 1000) {
           clearInterval(intervalId);
         }
+      
         const result = convertMs(differenceInTime);
        OfTimer(result);
-
+       return
       }, 1000);
     });
   },
