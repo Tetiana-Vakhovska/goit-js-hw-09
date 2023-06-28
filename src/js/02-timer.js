@@ -10,7 +10,7 @@ const refs = {
   mins: document.querySelector('span[data-minutes]'),
   secs: document.querySelector('span[data-seconds]'),
 };
-let differenceInTime;
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -30,7 +30,7 @@ const options = {
 
     refs.start.addEventListener('click', () => {
       intervalId = setInterval(() => {
-        const differenceInTime = selectedDates[0] - new Date();
+        const differenceInTime = selectedDates[0] - Date.now();
 
         if (differenceInTime < 1000) {
           clearInterval(intervalId);
