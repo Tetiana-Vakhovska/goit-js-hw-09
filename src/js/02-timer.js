@@ -29,22 +29,22 @@ const options = {
     }
 
     refs.start.addEventListener('click', () => {
-      intervalId = setInterval(() => {
-        const differenceInTime = selectedDates[0] - new Date();
-
-        if (differenceInTime < 1000) {
-          clearInterval(intervalId);
-        }
-        const result = convertMs(differenceInTime);
-       OfTimer(result);
-
-      }, 0);
+   
     });
   },
 
 
 }
+intervalId = setInterval(() => {
+  const differenceInTime = selectedDates[0] - new Date();
 
+  if (differenceInTime < 1000) {
+    clearInterval(intervalId);
+  }
+  const result = convertMs(differenceInTime);
+ OfTimer(result);
+
+}, 1000);
 flatpickr('#datetime-picker', options);
 
 function OfTimer({ days, hours, minutes, seconds }) {
