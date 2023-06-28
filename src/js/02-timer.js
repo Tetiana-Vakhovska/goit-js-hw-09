@@ -10,7 +10,7 @@ const refs = {
   mins: document.querySelector('span[data-minutes]'),
   secs: document.querySelector('span[data-seconds]'),
 };
-
+let differenceInTime;
 const options = {
   enableTime: true,
   time_24hr: true,
