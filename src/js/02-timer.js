@@ -38,9 +38,7 @@ const options = {
         const result = convertMs(differenceInTime);
        OfTimer(result);
 
-  
-
-      }, 1000);
+      }, 0);
     });
   },
 
