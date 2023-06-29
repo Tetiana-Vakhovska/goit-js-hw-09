@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from "notiflix";
-
+ let intervalId;
 const refs = {
   input: document.querySelector('#datetime-picker'),
   start: document.querySelector('button[data-start]'),
@@ -27,26 +27,25 @@ const options = {
     if (selectedDates[0] > new Date()) {
       refs.start.disabled = false;
     }
-
-    refs.start.addEventListener('click', () => {
-      intervalId = setInterval(() => {
-        const differenceInTime = selectedDates[0] -  new Date();
-
-        if (differenceInTime < 1000) {
-          clearInterval(intervalId);
-        }
-      
-        const result = convertMs(differenceInTime);
-       OfTimer(result);
-       return
-      }, 1000);
-    });
   },
-
 
 }
 
 flatpickr('#datetime-picker', options);
+
+refs.start.addEventListener ('click', () => {
+  intervalId = setInterval(() => {
+    const differenceInTime = selectedDates[0] -  new Date();
+
+    if (differenceInTime < 1000) {
+      clearInterval(intervalId);
+    }
+  
+    const result = convertMs(differenceInTime);
+   OfTimer(result);
+   return
+  }, 1000);
+});
 
 function OfTimer({ days, hours, minutes, seconds }) {
   refs.days.textContent = `${days}`;
