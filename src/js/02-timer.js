@@ -28,16 +28,14 @@ const options = {
     if (selectedDates[0] > new Date()) {
       refs.start.disabled = false;
     }
+  
     
-    const result = convertMs(differenceInTime);
-    OfTimer(result);
-    return
    }
   }
   
 flatpickr('#datetime-picker', options);
 
-
+refs.start.addEventListener ('click', onClose) ; 
 
 function OfTimer({ days, hours, minutes, seconds }) {
   refs.days.textContent = `${days}`;
@@ -46,7 +44,7 @@ function OfTimer({ days, hours, minutes, seconds }) {
   refs.secs.textContent = `${seconds}`;
 }
 
-refs.start.addEventListener ('click') ; 
+
 
   intervalId = setInterval(() => {
     const differenceInTime = selectedDates[0] -  new Date();
@@ -54,8 +52,9 @@ refs.start.addEventListener ('click') ;
     if (differenceInTime < 1000) {
       clearInterval(intervalId);
     }
-  
-   
+    const result = convertMs(differenceInTime);
+    OfTimer(result);
+    return
   });
 
 
