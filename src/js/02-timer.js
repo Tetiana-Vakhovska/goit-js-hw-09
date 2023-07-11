@@ -2,6 +2,8 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from "notiflix";
 
+
+
  let intervalId =null;
 const refs = {
   input: document.querySelector('#datetime-picker'),
@@ -10,6 +12,7 @@ const refs = {
   hours: document.querySelector('span[data-hours]'),
   mins: document.querySelector('span[data-minutes]'),
   secs: document.querySelector('span[data-seconds]'),
+
 };
 
 const options = {
@@ -29,7 +32,16 @@ const options = {
       refs.start.disabled = false;
     }
   
-    
+    intervalId = setInterval(() => {
+      const differenceInTime = selectedDates[0] -  new Date();
+  
+      if (differenceInTime < 1000) {
+        clearInterval(intervalId);
+      }
+      const result = convertMs(differenceInTime);
+      OfTimer(result);
+      return
+    });
    }
   }
   
@@ -46,16 +58,7 @@ function OfTimer({ days, hours, minutes, seconds }) {
 
 
 
-  intervalId = setInterval(() => {
-    const differenceInTime = selectedDates[0] -  new Date();
-
-    if (differenceInTime < 1000) {
-      clearInterval(intervalId);
-    }
-    const result = convertMs(differenceInTime);
-    OfTimer(result);
-    return
-  });
+ 
 
 
 
