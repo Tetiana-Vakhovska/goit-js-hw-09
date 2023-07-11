@@ -3,7 +3,7 @@ import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from "notiflix";
 
 
-let onClose=null;
+let onClose=true;
  let intervalId =null;
 const refs = {
   input: document.querySelector('#datetime-picker'),
