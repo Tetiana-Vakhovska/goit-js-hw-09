@@ -47,7 +47,7 @@ const options = {
  
 flatpickr('#datetime-picker', options);
 
-
+refs.start.addEventListener('click', onClose);
 
 function OfTimer({ days, hours, minutes, seconds }) {
   refs.days.textContent = `${days}`;
@@ -60,7 +60,7 @@ function OfTimer({ days, hours, minutes, seconds }) {
 
 
 
-refs.start.addEventListener('click', onClose);
+
 
   function convertMs(ms) {
     // Number of milliseconds per unit of time
