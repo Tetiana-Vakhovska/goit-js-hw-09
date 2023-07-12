@@ -60,9 +60,7 @@ function OfTimer({ days, hours, minutes, seconds }) {
 
 
 
-refs.start.addEventListener('click', () => setTimeout(function(){
- onClose()
-}, 1));
+refs.start.addEventListener('click', onClose);
 
   function convertMs(ms) {
     // Number of milliseconds per unit of time
