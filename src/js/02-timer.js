@@ -22,7 +22,7 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     console.log(selectedDates[0]);
-refs.start.addEventListener ('click', onClose) ; 
+
     if (selectedDates[0] < new Date()) {
       refs.start.disabled = true;
       Notiflix.Notify.failure('Please choose a date in the future!');
@@ -44,7 +44,7 @@ refs.start.addEventListener ('click', onClose) ;
     });
    }
   }
-  
+ 
 flatpickr('#datetime-picker', options);
 
 
@@ -58,7 +58,7 @@ function OfTimer({ days, hours, minutes, seconds }) {
 
 
 
- 
+refs.start.addEventListener('click', setTimeout(function(){ onClose}, 3000));
 
 
 
